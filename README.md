@@ -1,8 +1,16 @@
 # Launcher_learn
 学习目标：
-1、敲完TvRecycleView项目
+1、敲完tab+fragment的布局
+
+2、敲完metro Fragment
+
+3、**学习下TvRecycleView的内部机制**
 
 
+
+
+
+----------
 
 #知识点
 1、  android:supportsRtl="true"
@@ -59,3 +67,4 @@ build.gradle的配置
     	}
     }
     
+
