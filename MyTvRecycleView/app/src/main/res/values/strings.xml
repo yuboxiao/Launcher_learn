@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyTvRecycleView</string>
+    <string name="tab_metro">Metro</string>
+    <string name="tab_list">List</string>
+    <string name="tab_grid">Grid</string>
+    <string name="tab_v7_grid">V7Grid</string>
+    <string name="tab_staggered">Staggered</string>
+    <string name="tab_spannable">Spannable</string>
+    <string name="tab_update_data">UpdateData</string>
 </resources>
