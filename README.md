@@ -68,3 +68,15 @@ build.gradle的配置
     }
     
 
+###2.3 遇到一个问题
+MetroAdapter.java 文件中
+    
+    View itemView = metroHolder.itemView;
+    MetroGridLayoutManager.LayoutParams lp = new MetroGridLayoutManager.LayoutParams(
+    ViewGroup.LayoutParams.MATCH_PARENT,
+    ViewGroup.LayoutParams.MATCH_PARENT);
+
+    //TODO 为什么人家这里可以获取到layoutParams
+    //MetroGridLayoutManager.LayoutParams lp = (MetroGridLayoutManager.LayoutParams) itemView.getLayoutParams();
+
+
