@@ -33,9 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by owen on 2017/7/20.
+ * 这个类是FocusBorder的实现类
  */
-
 public abstract class AbsFocusBorder extends View implements FocusBorder, ViewTreeObserver.OnGlobalFocusChangeListener{
     private static final long DEFAULT_ANIM_DURATION_TIME = 300;
     private static final long DEFAULT_SHIMMER_DURATION_TIME = 1000;
