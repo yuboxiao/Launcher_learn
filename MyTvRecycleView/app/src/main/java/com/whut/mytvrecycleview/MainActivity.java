@@ -46,12 +46,14 @@ public class MainActivity extends FragmentActivity {
         mTabLayout.setScaleValue(1.1f);
         setTabsTitles();
 
+        setUpListener();
+    }
 
+    private void setUpListener() {
     }
 
 
     private class TabSelectedListener implements TabLayout.OnTabSelectedListener {
-
 
         private Fragment mFragment;
         private int mLayoutResIds[] = {
