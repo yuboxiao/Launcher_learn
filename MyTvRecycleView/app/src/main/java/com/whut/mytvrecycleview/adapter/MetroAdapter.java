@@ -14,9 +14,6 @@ import com.whut.mytvrecycleview.R;
 import com.whut.mytvrecycleview.data.ItemBean;
 
 import java.util.List;
-
-import butterknife.BindView;
-
 /**
  * 作者: x00378851
  * 日期: 2018/10/21 16:44
@@ -45,11 +42,11 @@ public class MetroAdapter extends RecyclerView.Adapter {
             final MetroHolder metroHolder = (MetroHolder) holder;
             if (itemBean.imgUrl != null) {
                 Log.d(TAG, "onBindViewHolder: setImage--->" + itemBean.imgUrl);
+                //TODO 这里一定要增加网络访问的权限，否则死活加载不出来图片
                 Glide.with(mContext)
                         .load(itemBean.imgUrl)
                         .into(metroHolder.mImgView);
             }
-
             if (itemBean.title != null) {
                 Log.d(TAG, "onBindViewHolder: setText--->" + itemBean.title);
                 metroHolder.mTitle.setText(String.valueOf(position));
