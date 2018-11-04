@@ -22,12 +22,12 @@ public class ImgDatas {
             "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2942413784,938350867&fm=11&gp=0.jpg",
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3013600352,2077937082&fm=26&gp=0.jpg"
     };
-    
+
     public static String getUrl() {
         return imgs[random.nextInt(imgs.length)];
     }
-    
-    
+
+
     private static String[] movieImgs = new String[]{
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4116929131,507038119&fm=26&gp=0.jpg",
             "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2778645995,2482914601&fm=26&gp=0.jpg",
