@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.owen.tvrecyclerview.widget.MetroTitleItemDecoration;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
 import com.whut.mytvrecycleview.R;
 import com.whut.mytvrecycleview.adapter.MetroAdapter;
@@ -47,6 +48,8 @@ public class MetroFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mAdapter = new MetroAdapter(getContext());
         mAdapter.setDatas(ItemDatas.getDatas(ITEM_COUNT));
+
+        mTvRecycleView.addItemDecoration(new MetroTitleItemDecoration(mAdapter));
         mTvRecycleView.setSpacingWithMargins(10, 10);//设置行列间距
         mTvRecycleView.setAdapter(mAdapter);
     }

@@ -3,6 +3,7 @@ package com.whut.mytvrecycleview.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.owen.tvrecyclerview.widget.MetroGridLayoutManager;
+import com.owen.tvrecyclerview.widget.MetroTitleItemDecoration;
 import com.whut.mytvrecycleview.R;
 import com.whut.mytvrecycleview.data.ItemBean;
 
@@ -19,7 +21,7 @@ import java.util.List;
  * 日期: 2018/10/21 16:44
  */
 
-public class MetroAdapter extends RecyclerView.Adapter {
+public class MetroAdapter extends RecyclerView.Adapter implements MetroTitleItemDecoration.Adapter {
 
     private static final String TAG = MetroAdapter.class.getSimpleName();
     private Context mContext;
@@ -62,10 +64,12 @@ public class MetroAdapter extends RecyclerView.Adapter {
 
 
             if (position > 18) {
+                //在这里设置了区域索引,这是标题栏2内容
                 lp.sectionIndex = 2;
                 lp.rowSpan = 3;
                 lp.colSpan = 2;
             } else if (position > 6) {
+                //在这里设置了区域索引,这是标题栏1内容
                 lp.sectionIndex = 1;
                 lp.isSuportIntelligentScrollEnd = false;
                 lp.isSuportIntelligentScrollStart = true;
@@ -80,6 +84,7 @@ public class MetroAdapter extends RecyclerView.Adapter {
                     lp.colSpan = 12;
                 }
             } else {
+                //在这里设置了区域索引,这是标题栏0内容
                 lp.sectionIndex = 0;
                 if (position == 0 || position == 6) {
                     lp.rowSpan = 3;
@@ -102,6 +107,24 @@ public class MetroAdapter extends RecyclerView.Adapter {
         this.mDatas = datas;
     }
 
+    /**
+     * 在这里去实现每一行去增加一个标题栏
+     * @param index
+     * @param parent
+     * @return
+     */
+    @Override
+    public View getTitleView(int index, RecyclerView parent) {
+        Log.d(TAG, "getTitleView: " + index);
+        switch (index) {
+            case 1:
+                return LayoutInflater.from(parent.getContext()).inflate(R.layout.item_title2, parent, false);
+            case 2:
+                return LayoutInflater.from(parent.getContext()).inflate(R.layout.item_title3, parent, false);
+        }
+        return LayoutInflater.from(parent.getContext()).inflate(R.layout.item_title, parent, false);
+    }
+
     class MetroHolder extends RecyclerView.ViewHolder {
 
         ImageView mImgView;
@@ -113,4 +136,6 @@ public class MetroAdapter extends RecyclerView.Adapter {
             mTitle = itemView.findViewById(R.id.title);
         }
     }
+
+
 }

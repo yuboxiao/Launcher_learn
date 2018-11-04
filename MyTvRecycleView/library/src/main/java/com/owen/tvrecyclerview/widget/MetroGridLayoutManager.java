@@ -402,8 +402,11 @@ public class MetroGridLayoutManager extends GridLayoutManager {
         public int rowSpan;
         public int colSpan;
         private int scale;
+        //这里代表的是区域，用作这一个区域内的都是标题栏n
         public int sectionIndex;
+        //代表是否是这个区域的开始的第一行
         public boolean isSectionStart;
+
         public boolean isSuportIntelligentScrollStart;
         public boolean isSuportIntelligentScrollEnd;
 
